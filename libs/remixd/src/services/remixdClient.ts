@@ -263,7 +263,7 @@ export class RemixdClient extends PluginClient {
       const newContent = fs.readFileSync(f)
       if (currentContent !== newContent && this.isLoaded) {
         this.emit('changed', utils.relativePath(f, this.currentSharedFolder))
-      }      
+      }
     })
     watcher.on('unlink', async (f: string) => {
       if (this.isLoaded) {
