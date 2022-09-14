@@ -244,7 +244,7 @@ export class RemixdClient extends PluginClient {
     const absPath = utils.absolutePath('./', path)
 
     if (!isRealPath(absPath)) return
-    const watcher = chokidar.watch(path, { depth: 0, ignorePermissionErrors: true })
+    const watcher = chokidar.watch(path, { ignorePermissionErrors: true })
     console.log('setup notifications for ' + path)
     /* we can't listen on created file / folder
     watcher.on('add', (f, stat) => {
