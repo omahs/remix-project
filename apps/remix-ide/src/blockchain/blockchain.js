@@ -22,7 +22,7 @@ const profile = {
   name: 'blockchain',
   displayName: 'Blockchain',
   description: 'Blockchain - Logic',
-  methods: ['getCode', 'getTransactionReceipt', 'addProvider', 'removeProvider'],
+  methods: ['getCode', 'getTransactionReceipt', 'addProvider', 'removeProvider', 'getAccounts', 'web3vm'],
   version: packageJson.version
 }
 
@@ -362,6 +362,10 @@ export class Blockchain extends Plugin {
 
   signMessage (message, account, passphrase, cb) {
     this.getCurrentProvider().signMessage(message, account, passphrase, cb)
+  }
+
+  web3vm () {
+    return this.providers.vm.web3
   }
 
   web3 () {

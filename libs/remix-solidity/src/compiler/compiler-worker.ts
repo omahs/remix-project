@@ -39,7 +39,7 @@ export default function (self) { // eslint-disable-line @typescript-eslint/expli
         break
       }
 
-      case 'compile':
+      case 'compile': {
         missingInputs.length = 0
         if (data.input && compileJSON) {
           self.postMessage({
@@ -52,6 +52,22 @@ export default function (self) { // eslint-disable-line @typescript-eslint/expli
           })
         }
         break
-    }
+      }
+
+      case 'standalone-compile':
+        missingInputs.length = 0
+        if (data.input && compileJSON) {
+          self.postMessage({
+            cmd: 'standalone-compiled',
+            job: data.job,
+            timestamp: data.timestamp,
+            data: compileJSON(data.input),
+            input: data.input,
+            missingInputs: missingInputs
+          })
+        }
+        break
+      }
+      
   }, false)
 }
