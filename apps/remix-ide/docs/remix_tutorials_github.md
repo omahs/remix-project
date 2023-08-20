@@ -5,7 +5,7 @@ There are a series of tutorials in our github repo [remix-workshops](https://git
 
 We are in the process of upgrading these tutorials to use the new Remix layout.  
 
-In this repo there tutorials for all levels.  
+In this repo there are tutorials for all levels.  
 
 There are tutorials for specific remix functionalities like:
 
